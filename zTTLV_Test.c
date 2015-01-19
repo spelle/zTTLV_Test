@@ -7,6 +7,7 @@
 #include "zTTLV_Buffer.h"
 
 #include <stdio.h>
+//#include <linux/crc16.h>
 
 int main( )
 {
@@ -59,14 +60,33 @@ int main( )
 
 	zTTLV_Item.zTag = 66 ;
 	zTTLV_Item.zType= ZTTLV_BUFFER ;
-	zTTLV_Item.zLength = zTTLV_Buffer2.current_Position ;
+	zTTLV_Item.zLength = zTTLV_Buffer2.last_Position ;
 	zTTLV_Item.zValue.pzTTLV_Buffer = &zTTLV_Buffer2 ;
+	zTTLV_Put( & zTTLV_Buffer, zTTLV_Item ) ;
+
+	zTTLV_Item.zTag = 77 ;
+	zTTLV_Item.zType= INT16 ;
+	zTTLV_Item.zLength = sizeof(int16_t) ;
+	zTTLV_Item.zValue.pInt16 = &anInt16 ;
 	zTTLV_Put( & zTTLV_Buffer, zTTLV_Item ) ;
 
 	for( ui8 = 0 ; ui8 < zTTLV_Buffer.total_Length ; ui8++ )
 	{
 		fprintf( stdout, "zTTLV_Buffer[%d]=%d\n", ui8, zTTLV_Buffer.pzTTLV_Buffer[ui8] ) ;
 	}
+
+	zTTLV_Item = zTTLV_Get( zTTLV_Buffer, 22 ) ;
+	zTTLV_Item_Print( & zTTLV_Item ) ;
+
+	zTTLV_Item = zTTLV_Get( zTTLV_Buffer, 55 ) ;
+	zTTLV_Item_Print( & zTTLV_Item ) ;
+
+	zTTLV_Item = zTTLV_Get( zTTLV_Buffer, 66 ) ;
+	zTTLV_Item_Print( & zTTLV_Item ) ;
+
+	zTTLV_Buffer2.pzTTLV_Buffer = zTTLV_Item.zValue.pUInt8 ;
+	zTTLV_Item = zTTLV_Get( zTTLV_Buffer2, 44 ) ;
+	zTTLV_Item_Print( & zTTLV_Item ) ;
 
 	return 0 ;
 }

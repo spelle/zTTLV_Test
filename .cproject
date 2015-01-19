@@ -29,6 +29,7 @@
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1861247099" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1228278900" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/zTTLV_lib_static/zTTLV_lib}&quot;"/>
+									<listOptionValue builtIn="false" value="/usr/src/linux-headers-3.13.0-44-generic/include"/>
 								</option>
 								<option id="gnu.c.compiler.option.dialect.std.428816479" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.548816644" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
@@ -83,6 +84,7 @@
 								<option id="gnu.c.compiler.exe.release.option.debugging.level.1815192894" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1526143591" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/zTTLV_lib_static/zTTLV_lib}&quot;"/>
+									<listOptionValue builtIn="false" value="/usr/src/linux-headers-3.13.0-44-generic/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.29874743" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
